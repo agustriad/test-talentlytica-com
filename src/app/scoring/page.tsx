@@ -6,7 +6,7 @@ import LoadingIcon from '@/components/LoadingIcon';
 import { useState } from 'react';
 
 export default function Page() {
-  const result = useScoringStore((state) => state.result);
+  const { result, resetResult } = useScoringStore((state) => state);
   const TOTAL_STUDENT = result.length;
   const TOTAL_ASPECT = result[0].length;
   const [loading, setLoading] = useState(false);
@@ -25,6 +25,7 @@ export default function Page() {
     await new Promise((res) => setTimeout(res, 500)); // Simulasi delay
     console.log(JSON.stringify(hasil, null, 2));
     alert('Cek console!');
+    resetResult();
     setLoading(false);
   };
 
