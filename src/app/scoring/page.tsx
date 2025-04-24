@@ -22,7 +22,7 @@ export default function Page() {
       }
     }
 
-    await new Promise((res) => setTimeout(res, 1000)); // Simulasi delay
+    await new Promise((res) => setTimeout(res, 500)); // Simulasi delay
     console.log(JSON.stringify(hasil, null, 2));
     alert('Cek console!');
     setLoading(false);
